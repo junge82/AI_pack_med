@@ -1,0 +1,22 @@
+ data_param = {'T1':    {'path_to_search': ('/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/LGG','/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/HGG'),
+                        'filename_contains': 'T1', 'filename_not_contains': ('T1c','SP_T1','SP_T1c')},
+                      'T1c':   {'path_to_search': ('/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/LGG','/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/HGG'),
+                        'filename_contains': 'T1c', 'filename_not_contains': 'SP_T1c'},
+                      'T2':    {'path_to_search': ('/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/LGG','/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/HGG'),
+                        'filename_contains': 'T2', 'filename_not_contains': 'SP_T2'},
+                      'Flair': {'path_to_search': ('/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/LGG','/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/HGG'),
+                        'filename_contains': 'Flair', 'filename_not_contains': 'SP_Flair'},
+                      'SP_T1': {'path_to_search': ('/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/LGG','/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/HGG'),
+                        'filename_contains': 'SP_T1', 'filename_not_contains': 'SP_T1c'},
+                      'SP_T1c': {'path_to_search': ('/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/LGG','/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/HGG'),
+                        'filename_contains': 'SP_T1c'},
+                      'SP_T2': {'path_to_search': ('/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/LGG','/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/HGG'),
+                        'filename_contains': 'SP_T2'},
+                      'SP_Flair': {'path_to_search': ('/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/LGG','/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/HGG'),
+                        'filename_contains': 'SP_Flair'},  
+                      'label': {'path_to_search': ('/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/LGG','/media/hdd/Meddatabase/BRATS2015_VSD/Dataset_NiftyNet/Brats15_renamed_training/HGG'),
+                        'filename_contains': 'Label'}
+                    }
+
+        grouping_param = {'image': ('T1', 'T1c', 'T2', 'Flair', 'SP_T1', 'SP_T1c', 'SP_T2', 'SP_Flair'), 'label':('label',)}
+        reader = ImageReader().initialise(data_param, grouping_param)
