@@ -1,0 +1,81 @@
+uniform
+weighted
+
+anisotropic segmentation spatial_window_size = (19, 144, 144)
+
+If all input volume have a consistent size h x w x d, and in the configuration:
+
+# in the input source section
+spatial_window_size = (h, w, d)
+
+The input image will be used as window, i.e., there’s no randomisation when this configuration
+is used with the uniform sampler, and only one window sample per volume when used with the grid sampler.
+
+Image as window
+
+
+Regression:
+autocontext
+spatial_window_size=(160, 160, 1)
+isample
+spatial_window_size=(72, 72, 1)
+
+Setting the spatial window size to:
+
+spatial_window_size = (h, w, 1)
+
+will generate 2.5D windows.
+Using this configuration with random flipping layer during training will effectively 
+use 2.5D input in different views.
+
+
+
+
+MR képek T1, T1c, T2 and FLAIR
+
+914 mb training 
+ 
+2.1 GB training
+
+1 gb test
+
+
+
+
+
+CVPR
+
+strukturalt ritka repr
+y=Ax
+A lehetnek waveletek
+
+feedforward becslése nehéz
+
+
+zajos (szűrés)
+hianyos adat (inpainting)
+gyenge felbontás (szuperrezolúció)
+
+probléma szétvagasa
+
+strukturált mély hálók
+
+J = 
+
+Bottom-up
+
+
+conv halok: transzlacio invariancia (Makhzani-Frey)
+
+segmentalas -> ng
+affin transzformaciok
+
+RNN
+Csoporton belül - csoportok között
+
+
+
+
+
+
+

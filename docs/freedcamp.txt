@@ -1,0 +1,26 @@
+Train with 8 channels with BRATS17 and NiftyNet
+
+Experiences with Brats17: dataloading slow, training is slow
+
+Thats why sort of NiftyNet dataloader was built in to BRATS17 app, namely load_data_nifty() in order to lower memory consumption.
+
+Experiences with NiftyNet: dataloading fast, training is  faster
+
+
+
+model_few earlystoopingafter 6 :
+
+tissue type whole
+dice mean   [0.87277807]
+dice std    [0.10101109]
+tissue type core
+dice mean   [0.4451428]
+dice std    [0.19867155]
+tissue type all
+tissue label [1, 2, 3, 4]
+dice mean   [7.10187032e-02 2.18941811e-15 2.81957530e-14 4.00000000e-02]
+dice std    [1.04278816e-01 2.09800185e-15 7.29564815e-14 1.95959179e-01]
+
+
+
+model_few earlystoopingbest :
