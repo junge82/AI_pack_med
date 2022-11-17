@@ -1,0 +1,173 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Anisotropic inference",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/gergely/NiftyNet/net_run.py",
+            "args": [
+                "inference","-a",
+                "anisotropic_nets_brats_challenge.brats_seg_app.BRATSApp",
+                "-c", "/home/gergely/niftynet/extensions/anisotropic_nets_brats_challenge/whole_tumor_axial.ini"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Anisotropic train",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/gergely/NiftyNet/net_run.py",
+            "args": [
+                "train","-a",
+                "anisotropic_nets_brats_challenge.brats_seg_app.BRATSApp",
+                "-c", "/home/gergely/niftynet/extensions/anisotropic_nets_brats_challenge/whole_tumor_axial.ini"
+                    ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Regression autocontext inference",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/gergely/NiftyNet/net_regress.py",
+            "args": [
+                "inference", "-c",
+                "/home/gergely/niftynet/extensions/autocontext_mr_ct/net_autocontext.ini",
+                "--inference_iter", "5","--spatial_window_size", "240,240,1", "--batch_size", "4",
+                "--dataset_split_file", "nofile"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Regression autocontext training",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/gergely/NiftyNet/net_regress.py",
+            "args": [
+                "train","-c", 
+                "/home/gergely/niftynet/extensions/autocontext_mr_ct/net_autocontext.ini",
+                "--starting_iter", "0", "--max_iter", "5"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Regression autocontext evaluation",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/gergely/NiftyNet/net_run.py",
+            "args": [
+                "evaluation", "-a",
+                "net_regress",
+                "-c","/home/gergely/niftynet/extensions/autocontext_mr_ct/net_autocontext.ini"
+                
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Regression isample inference w errormap",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/gergely/NiftyNet/net_run.py",
+            "args": [
+                "inference", "-a",
+                "niftynet.contrib.regression_weighted_sampler.isample_regression.ISampleRegression",
+                "-c","/home/gergely/niftynet/extensions/mr_ct_regression/net_isampler.ini",
+                "--inference_iter", "5","--spatial_window_size", "240,240,1", "--batch_size", "4",
+                "--error_map", "True"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Regression isample inferenceoutput",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/gergely/NiftyNet/net_run.py",
+            "args": [
+                "inference", "-a",
+                "niftynet.contrib.regression_weighted_sampler.isample_regression.ISampleRegression",
+                "-c","/home/gergely/niftynet/extensions/mr_ct_regression/net_isampler.ini",
+                "--inference_iter", "5","--spatial_window_size","240,240,1", "--batch_size", "4",
+                "--error_map", "False"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Regression isample evaluation",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/gergely/NiftyNet/net_run.py",
+            "args": [
+                "evaluation", "-a",
+                "niftynet.contrib.regression_weighted_sampler.isample_regression.ISampleRegression",
+                "-c","/home/gergely/niftynet/extensions/mr_ct_regression/net_isampler.ini"
+                
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Regression isample training",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/gergely/NiftyNet/net_run.py",
+            "args": [
+                "train", "-a", 
+                "niftynet.contrib.regression_weighted_sampler.isample_regression.ISampleRegression",
+                "-c","/home/gergely/niftynet/extensions/mr_ct_regression/net_isampler.ini",
+                "--starting_iter", "0","--max_iter", "5"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Current File (Integrated Terminal)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Attach",
+            "type": "python",
+            "request": "attach",
+            "port": 5678,
+            "host": "localhost"
+        },
+        {
+            "name": "Python: Django",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "console": "integratedTerminal",
+            "args": [
+                "runserver",
+                "--noreload",
+                "--nothreading"
+            ],
+            "django": true
+        },
+        {
+            "name": "Python: Flask",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "app.py"
+            },
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ],
+            "jinja": true
+        },
+        {
+            "name": "Python: Current File (External Terminal)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "externalTerminal"
+        }
+    ]
+}
